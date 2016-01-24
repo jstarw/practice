@@ -1,8 +1,8 @@
+#include "Node.h"
 #include <iostream>
 
-struct Node {
-    int data;
-    struct Node * next;
-    void print();
-    Node(int, Node * = NULL);
+struct Stack {
+	Node top;
+	Node pop();
+	Node Push(Node);
 };

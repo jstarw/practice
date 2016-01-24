@@ -1,17 +1,14 @@
 #include "node.h"
+#include "stack.h"
 
 using namespace std;
 
-void Node::print() {
-    cout << data << "->";
-    if (!next) {
-        cout << "NULL" << endl;
-    } else {
-        next->print();
-    }
+Node Stack::pop() {
+	if (Node::top == NULL) {
+		
+	}
 }
 
-Node::Node(int a, Node *b) {
-    data = a;
-    next = b;
+Node Stack::push(Node a) {
+
 }
