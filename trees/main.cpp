@@ -1,5 +1,6 @@
 #include "bstnode.h"
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -75,6 +76,24 @@ BstNode* deleteNode(BstNode* root, int a) {
 	return root;
 }
 
+int findHeight(BstNode* root) {
+	if (root==NULL) return 0;
+	return fmax(findHeight(root->left), findHeight(root->right))+1;
+}
+
+//4.1
+bool isBalanced(BstNode* root) {
+	if (root == NULL) return true;
+	int diff  = findHeight(root->right) - findHeight(root->left);
+	if (abs(diff)>1) {
+		return false;
+	} else {
+		return isBalanced(root->left) && isBalanced(root->right);
+	}
+}
+
+
+
 int main() {
 	BstNode * root = new BstNode();
 	root = insert(9, NULL);
@@ -91,4 +110,6 @@ int main() {
 	search(root, 1);
 	root = deleteNode(root, 1);
 	inOrder(root);
+	cout<<isBalanced(root);
+
 }

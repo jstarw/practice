@@ -2,7 +2,11 @@
 #include <iostream>
 
 struct Stack {
-	Node top;
-	Node pop();
-	Node Push(Node);
+	Node* top;
+	void pop();
+	void push(int a);
+	int peek();
+	void print();
+	Stack(int);
+	Stack();
 };
