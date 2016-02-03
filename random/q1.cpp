@@ -116,6 +116,24 @@ void setZero (int matrix[3][3]) {
 	}
 }
 
+int findSecond (vector<int> arr) {
+	if (arr.size()==0) return -1;
+	if (arr.size()==1) return arr[0];
+
+	int max1 = arr[0]>arr[1] ? arr[0]:arr[1];
+	int max2 = arr[0]>arr[1] ? arr[1]:arr[0];
+
+	for (int i=2; i<arr.size(); i++) {
+		if (arr[i] > max1 && arr[i] > max2) {
+			max2 = max1;
+			max1 = arr[i];
+		} else if (arr[i] <=max1 && arr[i] > max2) {
+			max2 = arr[i];
+		}
+	}
+	return max2;
+}
+
 int main(int argc, char const *argv[])
 {
 	char word[] = {'a', 'b', 'c', 'd', '\0'};
@@ -130,6 +148,14 @@ int main(int argc, char const *argv[])
 	// bool a = isPermute(str1, str2);
 	// str1 = compress(str1);
 	// rotateImg(image);
-	setZero(matrix);
+	vector<int> arr1;
+	arr1.push_back(5);
+	arr1.push_back(8);
+	arr1.push_back(2);
+	arr1.push_back(6);
+	arr1.push_back(0);
+	arr1.push_back(1);
+	arr1.push_back(2);
+	cout<< findSecond(arr1);
 	return 0;
 }

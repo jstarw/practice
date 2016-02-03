@@ -26,5 +26,6 @@ void SetOfStacks::push(int a) {
 		count = 1;
 	} else {
 		array[index]->push(a);
+		count++;
 	}
 }

@@ -12,12 +12,13 @@ int main(int argc, char const *argv[])
     // cout << **ptr;
 
 	SetOfStacks* stack = new SetOfStacks(4);
-	stack->print();
+	// stack->print();
 	stack->push(2);
 	stack->push(2);
 	stack->push(2);
 	stack->push(2);
 	stack->push(2);
 	stack->push(2);
-	stack->print();
+	stack->pop();
+	// stack->print();
 }

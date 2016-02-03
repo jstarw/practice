@@ -14,7 +14,10 @@ void Stack::pop() {
 	if (top == NULL) {
 		throw new exception();
 	}
-	top->remove(top);
+	// top->remove(top);
+	Node* temp = top;
+	top = top->next;
+	delete temp;
 }
 
 void Stack::push(int a) {
